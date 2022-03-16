@@ -18,7 +18,7 @@
 /********************************************************************
 ***                      1D lattice                               ***
 ********************************************************************/
-void rede_unidimensional (int **viz, int L)
+void unidimensional_lattice (int **viz, int L)
 {
 	int x;
 	int N  = L;
@@ -42,7 +42,7 @@ void rede_unidimensional (int **viz, int L)
 /********************************************************************
 ***                     Square von Neumann                        ***
 ********************************************************************/
-void rede_quadrada (int **viz, int L)
+void square_lattice (int **viz, int L)
 {
 	int x;
 	long int L2 = L*L;
@@ -73,7 +73,7 @@ void rede_quadrada (int **viz, int L)
 /********************************************************************
 ***                      cubic lattice                            ***
 ********************************************************************/
-void rede_cubica (int **viz, int L)
+void cubic_lattice (int **viz, int L)
 {
 	int x;
 	long int L2 = L*L;
@@ -111,7 +111,7 @@ void rede_cubica (int **viz, int L)
 /********************************************************************
 ***                   	   4D hypercubic    		            ***
 ********************************************************************/
-void rede_quadridimensional (int **viz, int L)
+void hypercubic_lattice (int **viz, int L)
 {
 	int x;
 	long int L2 = L*L;
@@ -138,7 +138,7 @@ void rede_quadridimensional (int **viz, int L)
 		***                     P.B.C.                    ***
 		****************************************************/
 		if (x % (L2) < L)		{ viz[x][1] = x + (L - 1) * L; } //top boundary
-		if (x % L == 0)		{ viz[x][4] = x + (L - 1); } //left boundary
+		if (x % L == 0)			{ viz[x][4] = x + (L - 1); } //left boundary
 		if (x % (L2) >= L2-L)		{ viz[x][3] = x - (L - 1) * L; } //botton boundary
 		if ((x-L+1) % L == 0)		{ viz[x][2] = x - (L - 1); } //right boundary
 		if (x % (L3) < L2)		{ viz[x][6] = x + L3 - L2; } //front boundary
@@ -155,7 +155,7 @@ void rede_quadridimensional (int **viz, int L)
 /********************************************************************
 ***                     kagome lattice                            ***
 ********************************************************************/
-void rede_kagome (int **viz, int L)
+void kagome_lattice (int **viz, int L)
 {
 	int x;
 	long L2 = L*L;
@@ -233,7 +233,7 @@ void rede_kagome (int **viz, int L)
 /********************************************************************
 ***                     hexagonal lattice                         ***
 ********************************************************************/
-void rede_hexagonal (int **viz, int L)
+void hexagonal_lattice (int **viz, int L)
 {
 	int x;
 	long L2 = L*L;
@@ -296,7 +296,7 @@ void rede_hexagonal (int **viz, int L)
 /********************************************************************
 ***                   triangular lattice                          ***
 ********************************************************************/
-void rede_triangular (int **viz, int L)
+void triangular_lattice (int **viz, int L)
 {
 	int x;
 	long int L2 = L*L;
@@ -354,7 +354,7 @@ void rede_triangular (int **viz, int L)
 /********************************************************************
 ***                        square Moore                           ***
 ********************************************************************/
-void rede_moore (int **viz, int L)
+void moore_lattice (int **viz, int L)
 {
 	int x;
 	long int L2 = L*L;
