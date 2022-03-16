@@ -1,7 +1,7 @@
 set terminal gif animate delay 10
-set output 'gif_r4_g011.gif'				#compilar: gnuplot oi.sh
+set output 'gif_r4_g011.gif'				#compiling: gnuplot gif.sh
 set key bottom
-stats 'dados_matriz.txt' nooutput
+stats 'dados_snap_gnuplot.txt' nooutput
 
 set autoscale keepfix
 set palette model RGB
@@ -19,7 +19,7 @@ set yrange [0:100]
 
 do for [i=0:99999] {
 	
-    plot 'dados_matriz.txt'  index (i) matrix with image;
+    plot 'dados_snap_gnuplot.txt'  index (i) matrix with image;
 
 }	
 
