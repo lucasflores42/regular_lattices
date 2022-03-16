@@ -1,15 +1,16 @@
-/******************************************************************
-***                        Lattices                             ***
-*******************************************************************
+/********************************************************************
+***                          Lattices                             ***
+*********************************************************************
 ***                                                		  ***
-***     #include "pointers.h"                        	  ***
-***     define in main.c:                         		  ***
+***    define in main.c:                         		  ***
 ***                                				  ***                                      		
-***		int G,L,N;					  ***
+***		int G;  //group size				  ***
+***		int N;	//population size			  ***
+***		int L;	//linear popuatlion size		  ***
 ***		int **viz; //viz[N][G]				  ***
 ***		viz = create_2d_int_pointer_h(N,G);		  ***
-***		rede_nome(viz,L);  				  ***
-***		free_2d_int_pointer(viz,N,G)  //no final do main  ***
+***		lattice_name(viz,L);  				  ***
+***		free_2d_int_pointer(viz,N,G)  //end of main 	  ***
 ***                                                 		  ***
 ********************************************************************/
 ;
