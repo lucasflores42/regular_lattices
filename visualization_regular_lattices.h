@@ -1,12 +1,13 @@
 /********************************************************************
 ***                        Snapshots                              ***
+***								  ***
+***     	define the linear population size L in main.c     ***
 ********************************************************************/
-void snap_gnuplot(int state[N], int topologia[N], int t)	//    ./a.out | gnuplot
+void snap_gnuplot(int state[N])	//    ./a.out | gnuplot
 {
 
 	int i,j;
 	
-	//printf("set title \"MCS = %d\" \n",t);
 	printf("set autoscale keepfix\n");
 	printf("set palette model RGB\n");
 	printf("unset colorbox\n");
@@ -29,17 +30,13 @@ void snap_gnuplot(int state[N], int topologia[N], int t)	//    ./a.out | gnuplot
 			printf("%d ",state[j+i*L]);
 		
 		}
-		/*for(j=0;j<L;j++)
-		{
-			printf("%d ",topologia[j+i*L]);
-		}*/
 		printf("\n");
 	}
 	printf("\n"); 
 	printf("e\n");    printf("pause(%lf)\n",fps);
 	
 }
-void snap_gif(int state[N], int topologia[N], int t) // use with gif.sh
+void snap_gif(int state[N]) // use with gif.sh
 {
 
 	int i,j;
@@ -51,16 +48,12 @@ void snap_gif(int state[N], int topologia[N], int t) // use with gif.sh
 			printf("%d ",state[j+i*L]);
 		
 		}
-		/*for(j=0;j<L;j++)
-		{
-		printf("%d ",topologia[j+i*L]);
-		}*/
 		printf("\n");
 	}
 	printf("\n"); 
 
 }
-void snap_kagome(int state[N], int topologia[N], int t)   //    ./a.out | gnuplot
+void snap_kagome(int state[N])   //    ./a.out | gnuplot
 {
 
 	int n,i,j; //n = i + 2j N
@@ -80,12 +73,13 @@ void snap_kagome(int state[N], int topologia[N], int t)   //    ./a.out | gnuplo
 
 	for(n=0;n<N;n++)
 	{
-	//int L = 100;
+
 	int d = 1;
 	double h = d*pow(3/4,1/2);
 	int n_cell = (int) (n/3);
 	int cell_row = (int) (n_cell/L);
 	int cell_column = (n_cell%(L));	
+		
 		if(n % 3 == 0)
 		{
 			x = 2*d*cell_column + cell_row*d;
@@ -102,12 +96,11 @@ void snap_kagome(int state[N], int topologia[N], int t)   //    ./a.out | gnuplo
 			y = h + 2*h*cell_row;
 		}
 		printf("%lf %lf %d\n",x,y,state[n]);
-		//printf("%lf %lf %d %lf %lf\n",x,y,a,h,2*h* (int) (n_celula/L));
 	}
 	printf("\n"); 
 	printf("e\n");    printf("pause(%lf)\n",fps);
 }
-void snap_hexa(int state[N], int topologia[N], int t)   //    ./a.out | gnuplot
+void snap_hexa(int state[N])   //    ./a.out | gnuplot
 {
 
 	int n,i,j; //n = i + 2j N
