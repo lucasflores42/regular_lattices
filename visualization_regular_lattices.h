@@ -83,23 +83,23 @@ void snap_kagome(int state[N], int topologia[N], int t)   //    ./a.out | gnuplo
 	//int L = 100;
 	int d = 1;
 	double h = d*pow(3/4,1/2);
-	int n_celula = (int) (n/3);
-	int linha_celula = (int) (n_celula/L);
-	int coluna_celula = (n_celula%(L));	
+	int n_cell = (int) (n/3);
+	int cell_row = (int) (n_cell/L);
+	int cell_column = (n_cell%(L));	
 		if(n % 3 == 0)
 		{
-			x = 2*d*coluna_celula + linha_celula*d;
-			y = 0 + 2*h*linha_celula;
+			x = 2*d*cell_column + cell_row*d;
+			y = 0 + 2*h*cell_row;
 		}
 		if(n % 3 == 1)
 		{
-			x = d + 2*d*coluna_celula  + linha_celula*d;
-			y = 0 + 2*h*linha_celula;
+			x = d + 2*d*cell_column  + cell_row*d;
+			y = 0 + 2*h*cell_row;
 		}
 		if(n % 3 == 2)
 		{
-			x = (d/2.) + 2*d*coluna_celula  + linha_celula*d;
-			y = h + 2*h*linha_celula;
+			x = (d/2.) + 2*d*cell_column  + cell_row*d;
+			y = h + 2*h*cell_row;
 		}
 		printf("%lf %lf %d\n",x,y,state[n]);
 		//printf("%lf %lf %d %lf %lf\n",x,y,a,h,2*h* (int) (n_celula/L));
