@@ -60,7 +60,7 @@ void square_lattice (int **viz, int L)
 		***                     P.B.C.                   ***
 		****************************************************/
 		if (x < L)		{ viz[x][1] = x + (L - 1) * L; } //top boundary
-		if (x % L == 0)	{ viz[x][4] = x + (L - 1); } 	//left boundary
+		if (x % L == 0)		{ viz[x][4] = x + (L - 1); } 	//left boundary
 		if (x >= L2-L)		{ viz[x][3] = x - (L - 1) * L; } //botton boundary
 		if ((x-L+1) % L == 0)	{ viz[x][2] = x - (L - 1); } //right boundary
 
