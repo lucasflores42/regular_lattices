@@ -1,9 +1,8 @@
 ## Game Theory
 
 ----------
-Supplemental material containing the code for the Monte-Carlo Algorithm for the evolution of a population interacting through a public goods games
+Supplemental material containing the code for the construction of diverse regular lattices and the respective visualizations
 ----------
-This material is a simplified version with the goal of helping interested readers and students to further develop their own models and variations of a population dynamic with game theory mechanisms.
+This material is a simplified version with the goal of helping interested readers and students to further develop their own models and variations of a population dynamic in different regular lattices.
 The current script is a simplified version of the complete model for the interested reader.
-All parameters are defined at the beggining of the script and can be freely changed inside the realistic range of each one.
 For more informations please refer to the complete research paper at:
