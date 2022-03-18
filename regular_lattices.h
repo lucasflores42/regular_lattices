@@ -6,7 +6,7 @@
 ***                                				  ***                                      		
 ***		int G;  //group size				  ***
 ***		int N;	//population size			  ***
-***		int L;	//linear popuatlion size		  ***
+***		int L;	//linear population size		  ***
 ***		int **viz; //viz[N][G]				  ***
 ***		viz = create_2d_int_pointer_h(N,G);		  ***
 ***		lattice_name(viz,L);  				  ***
