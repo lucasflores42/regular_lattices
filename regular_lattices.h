@@ -231,9 +231,9 @@ void kagome_lattice (int **viz, int L)
 }
 
 /********************************************************************
-***                     hexagonal lattice                         ***
+***                     honeycomb lattice                         ***
 ********************************************************************/
-void hexagonal_lattice (int **viz, int L)
+void honeycomb_lattice (int **viz, int L)
 {
 	int x;
 	long L2 = L*L;
