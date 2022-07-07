@@ -9,6 +9,6 @@ One great reference for constructing lattices is M. E. J. Newman G. T. Barkema -
 For more informations please refer to the complete research paper at:
 
 - https://www.researchgate.net/publication/361778824_Cooperation_in_regular_lattices
-- 
+- https://arxiv.org/abs/2207.02314
 - 
 
