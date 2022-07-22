@@ -10,10 +10,10 @@ md"""
 
 define in main.jl:
                                				  				                                       		
-		G  				#group size				  						 
-		N				#population size			 					  
-		L				#linear population size		 					  
-		viz[N,G] 		#neighbors locations
+	G  				#group size				  						 
+	N				#population size			 					  
+	L				#linear population size		 					  
+	viz[N,G] 			#neighbors locations
 
 for the boundary conditions to work N must have range 0:N-1	inside viz;
 one way of achieving this is to use
