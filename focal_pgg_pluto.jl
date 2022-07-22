@@ -42,14 +42,14 @@ md"""
 
 # ╔═╡ 9fa114af-d524-479e-9b91-02e3bf794548
 begin
-	N=100^2
-	tmax=1000
+	N=100^2	# population size
+	tmax=1000 
 	RUIDO=0.1
-	L=100
-	G=5
+	L=100 # linear population size
+	G=5 # group size
 
-	#r = 
-	#investimento = [0 for i in 1:N]
+	r = 5.2
+	investment = [1 for i in 1:N]
 	viz = OffsetArray{Int64}(undef, 0:N-1, 0:G-1)
 	dens_c =  Array{Float64}(undef, tmax)
 	dens_d = Array{Float64}(undef, tmax)
@@ -89,9 +89,9 @@ md"""
 # ╔═╡ f5cdbbdc-5a18-43b8-986d-1d240800a70c
 mutable struct Players
 	index::Int64
-    state::Int64
-    neighborhood::Int64
-    contribution::Float64
+    	state::Int64
+    	neighborhood::Int64
+   	contribution::Float64
 	payoff::Float64
 end
 
@@ -100,7 +100,7 @@ begin
 	# create an uninitialized 1D array of size `N` of structs
 	player = Array{Players, 1}(undef, N) 
 	for i = 1:N
-	    player[i] = Players(i, rand((0,1)), G, 0, 0)
+	    player[i] = Players(i, rand((0,1)), G, investment[i], 0)
 	end
 	
 end
@@ -125,7 +125,7 @@ function dens(t)
 	dens_d[t] = dens_d[t]/N
 
 	#with_terminal() do 
-    #    println("t=$t C=$dens_c D=$dens_d")
+    	#println("t=$t C=$dens_c D=$dens_d")
 	#end
 
 end
@@ -137,7 +137,7 @@ md"""
 """
 
 # ╔═╡ d7ae5b41-a165-4402-8c10-70e936c53daa
-function pool(x,r) # x de 0 a N-1; indice na matriz é um a menos no indice do struct
+function pool(x,r) # x from 0 a N-1; index of the viz matrix is one less than the index of the struct
 	pool = 0
 	for k = 0:player[x+1].neighborhood-1
 		pool += player[viz[x,k]+1].contribution*player[viz[x,k]+1].state
@@ -173,8 +173,8 @@ md"""
 function mcs(r)
 
 	for i = 1:N
-		x = 1 + round(Int, (N-1)*rand() )	#tem q ir de 1 a N
-		y = 1 + round(Int, (player[x].neighborhood-2)*rand() ) # tem q ir de 1 a 4
+		x = 1 + round(Int, (N-1)*rand() )	# from 1 to N
+		y = 1 + round(Int, (player[x].neighborhood-2)*rand() ) # from 1 to 4
 		vizinho = viz[x-1,y] + 1;
 		
 		if player[vizinho].state != player[x].state
@@ -196,12 +196,7 @@ begin
 	square_lattice(L)
 	dens_c .= 0
 	dens_d .= 0
-	r = 5.2
 		
-	for k in 1:N
-		player[k].contribution = 1
-	end
-
 	for t = 1:tmax
 		dens(t)
 		mcs(r)
@@ -211,7 +206,7 @@ end
 
 # ╔═╡ 223199e2-fa7a-4c70-9ef5-cdd000668886
 md"""
-# Plot evoluçao temporal
+# Plot time evolution
 """
 
 # ╔═╡ abb364b7-d858-4192-9ffb-7f4afb45efa4
