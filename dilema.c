@@ -627,21 +627,7 @@ void calculo_mobilidade( int state[N], int **viz)
 		state[viz[x][y]] = e;
 	}
 }
-/********************************************************************
-***                           Entropia                            ***
-********************************************************************/				
-void calculo_entropia( int state[N], int x, int **viz)
-{
-	
-	double g = gsl_rng_uniform(rand_vec);
-	if(g<=prob_mobil)
-	{		
-		int y = 1 + (int) 4*gsl_rng_uniform(rand_vec);
-		int e = state[x];
-		state[x] = state[viz[x][y]];
-		state[viz[x][y]] = e;
-	}
-}
+
 /********************************************************************
 ***                          Densidades                           ***
 ********************************************************************/
