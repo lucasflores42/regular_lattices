@@ -1,4 +1,4 @@
-## Game Theory
+## Cooperation in regular lattices
 
 ----------
 Supplemental material containing the code for the construction of diverse regular lattices and the respective visualizations
