@@ -10,5 +10,5 @@ For more informations please refer to the complete research paper at:
 
 - https://www.researchgate.net/publication/361778824_Cooperation_in_regular_lattices
 - https://arxiv.org/abs/2207.02314
-- 
+- DOI: 10.1016/j.chaos.2022.112744
 
